@@ -62,7 +62,7 @@ Print external URI
 */}}
 {{- define "graylog.url" -}}
 {{- if .Values.graylog.externalUri }}
-{{- include "graylog.formatUrl" (list . .Values.graylog.externalUri) }}
+{{- .Values.graylog.externalUri }}
 {{- else if .Values.graylog.ingress.enabled }}
 {{- if .Values.graylog.ingress.tls }}
 {{- range .Values.graylog.ingress.tls }}{{ range .hosts }}https://{{ . }}{{ end }}{{ end }}
